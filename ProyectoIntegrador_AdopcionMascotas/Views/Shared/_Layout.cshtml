@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoptaUnAmigo.com</title>
+  
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script>(function (b, c) { var e = document.createElement('link'); e.rel = 'stylesheet', e.type = 'text/css', e.href = 'https://chatboxlive.blahbox.net/static/css/main.css', document.getElementsByTagName('head')[0].appendChild(e); var f = document.createElement('script'); f.onload = function () { var g; if (c) g = 'previewInit'; else { var h = document.createElement('div'); g = 'cbinit', h.id = 'cbinit', document.body.append(h) } console.log(document.querySelector('#' + g)), chatbox.initChat(document.querySelector('#' + g), b, c) }, f.src = 'https://chatboxlive.blahbox.net/static/js/chat-lib.js', document.getElementsByTagName('head')[0].appendChild(f) })('e27d0b463e0276cf1cc9f4c755711e47', 0);</script>
+</head>
+<body>
+    @{
+        Dominio.Entidades.Usuario u_sesion = (Dominio.Entidades.Usuario)Session["Usuario"];
+        if (u_sesion == null)
+        {
+
+            ViewBag.NombresUsu = "";
+        }
+        else
+        {
+            ViewBag.NombresUsu = u_sesion.NOMBRES + " " + u_sesion.APELLIDOS;
+        }
+
+
+    }
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img id="navbar-img" src="~/imagenes/logo.png"/>
+                @Html.ActionLink("AdoptaUnAmigo.com", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (u_sesion == null)
+                    {
+                        <li>@Html.ActionLink("Iniciar Sesión", "Logueo", "Logueo")</li>
+                    }
+                    else
+                    {
+                        <li><p>Bienvenido, @ViewBag.NombresUsu</p></li>
+                        <li>@Html.ActionLink("Mi perfil", "Detalle", "Perfil")</li>
+                        <li>@Html.ActionLink("Cerrar sesión", "Log_out", "Logueo")</li>
+
+                    }
+
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - AdoptaUnAmigo.com - basado en ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

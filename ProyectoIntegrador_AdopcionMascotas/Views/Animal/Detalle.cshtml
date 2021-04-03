@@ -1,0 +1,103 @@
+﻿@*@model ProyectoIntegrador_AdopcionMascotas.Models.SP_DETALLE_ANIMAL_Result*@
+
+@model Dominio.Entidades.Animal_Tuneado
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalles de @Html.DisplayFor(model => model.NOMBRE)</h2>
+
+
+<img id="detalleimg" src=@Url.Content(string.Format("~/imagenes/animales/{0}",Model.FOTO)) alt="Imagen no Disponible" />
+
+@Html.ActionLink("Adoptar", "Registrar", "Interes", new {animal=Model.CODANIMAL,interesado=ViewBag.interesado}, new { @id = "adoptarbutton" })
+
+
+<div id="detallecaract">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CODANIMAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODANIMAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEXO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PESO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PESO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAMAÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAMAÑO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESC_RAZA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESC_RAZA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUEÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUEÑO)
+        </dd>
+
+
+    </dl>
+</div>
+

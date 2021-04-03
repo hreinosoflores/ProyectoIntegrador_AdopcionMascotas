@@ -1,0 +1,32 @@
+﻿.navbar {
+    background-color: #501B03;
+}
+
+
+.navbar-inverse .navbar-brand,
+.navbar-nav > li > p,
+.navbar-inverse .navbar-nav > li > a {
+    font-size:18px;
+    color: #E9E312;
+}
+
+    .navbar-inverse .navbar-brand:hover,
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #1762F8;
+    }
+
+
+    .navbar-nav > li > p {
+        margin: 0;
+        padding: 15px;
+        font-weight: bold;
+    }
+
+
+#navbar-img {
+    float: left;
+    width: 70px;
+    height: 70px;
+    padding: 0px;
+    margin: 0px;
+}

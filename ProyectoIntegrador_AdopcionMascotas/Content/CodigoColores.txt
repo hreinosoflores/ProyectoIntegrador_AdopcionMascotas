@@ -1,0 +1,6 @@
+﻿501B03 : Marron
+F86A0C : naranja
+D00A0A : rojo
+E9E312 : amarillo
+F7BF96 : color piel
+1762F8 : azul

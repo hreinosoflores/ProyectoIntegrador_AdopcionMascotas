@@ -1,0 +1,38 @@
+﻿#detalleimg {
+    float: left;
+    width: 40%;
+    margin: 0 5% 0 5%;
+    height: 500px;
+}
+
+#detallecaract {
+    float: left;
+    width: 50%;
+    height: auto;
+}
+
+#adoptarbutton {
+    float: left;
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #F86A0C;
+    padding: 14px 40px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+
+    #adoptarbutton:hover {
+        background: #F86A0C;
+        color:white;
+    }

@@ -1,0 +1,126 @@
+﻿@model Dominio.Entidades.Animal
+
+@{
+    ViewBag.Title = "Editando los datos de " + Model.NOMBRE;
+    Layout = "~/Views/Shared/_LayoutPerfil.cshtml";
+}
+
+    <h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar","Animal",FormMethod.Post,new { @enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(model => model.CODANIMAL)
+    @Html.HiddenFor(model => model.ESTADO)
+    @Html.HiddenFor(model => model.TIPO)
+    @Html.HiddenFor(model => model.DUEÑO)
+    @Html.HiddenFor(model => model.FOTO)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NOMBRE, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EDAD, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EDAD, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EDAD, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SEXO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @if (Model.SEXO == 1)
+            {
+                @Html.RadioButtonFor(model => model.SEXO, 1, new { @checked = true }) @Html.Label("Macho  ")
+                @Html.RadioButtonFor(model => model.SEXO, 2) @Html.Label("Hembra  ")
+            }
+            else
+            {
+                @Html.RadioButtonFor(model => model.SEXO, 1) @Html.Label("Macho  ")
+                @Html.RadioButtonFor(model => model.SEXO, 1, new { @checked = true }) @Html.Label("Hembra  ")
+            }
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PESO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PESO, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PESO, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TAMAÑO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @switch (Model.TAMAÑO)
+            {
+                case 1:
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 1, new { @checked = true }) @Html.Label("Pequeño  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 2) @Html.Label("Mediano  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 3) @Html.Label("Grande  ")
+                    break;
+                case 2:
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 1) @Html.Label("Pequeño  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 2, new { @checked = true }) @Html.Label("Mediano  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 3) @Html.Label("Grande  ")
+                    break;
+                default:
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 1) @Html.Label("Pequeño  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 2) @Html.Label("Mediano  ")
+                    @Html.RadioButtonFor(model => model.TAMAÑO, 3, new { @checked = true }) @Html.Label("Grande  ")
+                    break;
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RAZA, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RAZA, (SelectList)ViewBag.razas)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FOTO, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="archivo" />
+            <p style="color:red">@ViewBag.ext_invalida</p>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="GUARDAR CAMBIOS" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+

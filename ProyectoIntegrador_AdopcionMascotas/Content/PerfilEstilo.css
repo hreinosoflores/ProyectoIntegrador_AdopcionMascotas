@@ -1,0 +1,34 @@
+﻿#panel_perfil {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    height: 100%;
+    background: #D00A0A;
+}
+
+    #panel_perfil ul {
+        padding: 0;
+        margin: 0;
+    }
+
+        #panel_perfil ul li {
+            list-style: none;
+            padding: 15px 10px;
+            border-bottom: 1px solid white;
+        }
+
+
+
+            #panel_perfil ul li a {
+                color: white;
+            }
+
+
+#contenido_perfil {
+    float: left;
+    width: 75%;
+    height: auto;
+    margin-left: 5%;
+    padding: 0;
+}

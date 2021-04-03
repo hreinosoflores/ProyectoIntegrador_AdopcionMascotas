@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Dominio.Entidades.Animal_Tuneado>
+
+@{
+    ViewBag.Title = "Mis mascotas favoritas";
+    Layout = "~/Views/Shared/_LayoutPerfil.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<section class="seccionArticulos">
+
+    @foreach (var item in Model)
+    {
+        <article class="articulo">
+
+            <a href="@Url.Action("Detalle","Animal",new { codigo = item.CODANIMAL })">
+
+                <img class="imgart" src=@Url.Content(string.Format("~/imagenes/animales/{0}",item.FOTO.ToLower())) alt="Imagen no disponible" />
+
+            </a>
+            <p class="parrart">@Html.DisplayFor(modelItem => item.NOMBRE), @Html.DisplayFor(modelItem => item.SEXO), @Html.DisplayFor(modelItem => item.TAMAÑO) </p>
+            
+        </article>
+
+    }
+
+</section>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Dominio.Entidades.Animal_Tuneado>
+
+@{
+    ViewBag.Title = "AdoptaUnAmigo.com";
+}
+
+<div class="seccion_botones">
+
+    @Html.ActionLink("Registrar una nueva mascota para adopción", "ElegirTipo", "Animal", null, new { @id = "botonnaranja" })
+
+    @Html.ActionLink("Filtrar resultados", "Filtrar_tipo", null, new { @id = "botonnaranja" })
+
+    @Html.ActionLink("Quitar filtro", "Index", null, new { @id = "botonnaranja" })
+
+</div>
+
+
+
+<section class="seccionArticulos">
+
+    @foreach (var item in Model)
+    {
+        <article class="articulo">
+
+            <a href="@Url.Action("Detalle","Animal",new { codigo = item.CODANIMAL })">
+
+                <img class="imgart" src=@Url.Content(string.Format("~/imagenes/animales/{0}",item.FOTO.ToLower())) alt="Imagen no disponible" />
+
+            </a>
+            <p class="parrart">@Html.DisplayFor(modelItem => item.NOMBRE), @Html.DisplayFor(modelItem => item.SEXO), @Html.DisplayFor(modelItem => item.TAMAÑO) </p>
+        </article>
+
+    }
+
+</section>
+
+

@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Elegir la raza del animal";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Filtrar_raza", "Home", FormMethod.Post, new { @class="seccion_botones"}))
+{
+    @Html.Hidden("tipo")
+    @Html.DropDownList("raza", (SelectList)ViewBag.razas)
+    <input type="submit" value="Filtrar"  id="botonnaranja"/>
+
+    @Html.ActionLink("Ver todas las razas","Index", new { tipo= (long)ViewBag.tipo,raza= 0 })
+
+}
+

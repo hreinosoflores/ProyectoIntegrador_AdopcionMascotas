@@ -1,0 +1,24 @@
+﻿@{ 
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+
+
+    <aside id="panel_perfil">
+        <ul>
+            <li>@Html.ActionLink("Mis detalles", "Detalle", "Perfil")</li>
+            <li>@Html.ActionLink("Editar Datos", "Editar", "Perfil")</li>
+            <li>@Html.ActionLink("Mis mascotas añadidas", "Anadidas", "Perfil")</li>
+            <li>@Html.ActionLink("Mis mascotas favoritas", "Favoritas", "Perfil")</li>
+        </ul>
+
+    </aside>
+
+    <section id="contenido_perfil">
+
+        @RenderBody()
+    </section>
+       
+   
+

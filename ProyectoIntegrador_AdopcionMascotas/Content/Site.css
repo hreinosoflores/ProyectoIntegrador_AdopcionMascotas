@@ -1,0 +1,52 @@
+﻿body {
+    background-color: #F7BF96;
+    padding: 0;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    top:80px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position:relative;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#botonnaranja {
+    width: auto;
+    height: auto;
+    float: left;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: #F86A0C;
+    display: block;
+    margin: 12px;
+    text-align: center;
+    padding: 5px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.seccion_botones {
+float:left;
+width: 100%;
+height: auto;
+margin:0;
+padding:0;
+}

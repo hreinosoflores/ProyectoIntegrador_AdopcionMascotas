@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Elegir el tipo de animal";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<section class="seccionArticulos">
+
+
+    <a href="@Url.Action( "Filtrar_raza", new {tipo = 1})">
+        <article class="articulo">
+            <img class="imgart" src="~/imagenes/perro.jpg" />
+            <p class="parrart">Perro</p>
+        </article>
+    </a>
+
+    <a href="@Url.Action( "Filtrar_raza", new {tipo = 2})">
+        <article class="articulo">
+            <img class="imgart" src="~/imagenes/gato.jpg" />
+            <p class="parrart">Gato</p>
+        </article>
+    </a>
+
+</section>

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ElegirTipo";
+}
+
+<h2>¿Qué animal deseas dar en adopción?</h2>
+
+<section class="seccionArticulos">
+
+
+    <a href="@Url.Action( "Registrar", new { tipo = 1, dueño = ViewBag.dueño })">
+        <article class="articulo">
+            <img class="imgart" src="~/imagenes/perro.jpg" />
+            <p class="parrart">Perro</p>
+        </article>
+    </a>
+
+    <a href="@Url.Action( "Registrar", new {tipo = 2, dueño = ViewBag.dueño  })">
+        <article class="articulo">
+            <img class="imgart" src="~/imagenes/gato.jpg" />
+            <p class="parrart">Gato</p>
+        </article>
+    </a>
+
+</section>
+
+
+
