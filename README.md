@@ -1,5 +1,8 @@
 # ProyectoIntegrador_AdopcionMascotas
-Sitio web de adopción de mascotas
+Sitio web de adopción de mascotas.  
+Mayor información en 
+[este enlace](https://compartod.wordpress.com/2019/12/16/proyecto-adopta-un-amigo/ "Compartod - Proyecto Adopta Un Amigo")
+
 ## Características
 - Plataforma: Web
 - Lenguaje: C#
@@ -8,6 +11,7 @@ Sitio web de adopción de mascotas
 - Patrón MVC
 - Metodología Scrum
 - BD: Microsoft SQL Server 
+
 ## Para ejecutar el proyecto
 1. Clonar la solución en un IDE como Visual Studio 2019.
 1. Abrir y ejecutar **SCRIPT_BD_SISTEMA_ADOPCION_MASCOTA.sql** en un servidor Microsoft SQL Server
